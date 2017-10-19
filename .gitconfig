@@ -1,0 +1,4 @@
+[alias]
+	co = checkout
+[core]
+	editor = subl -n -w

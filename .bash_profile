@@ -4,8 +4,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 alias mountnuc='sshfs nuc:/home/ryanh/code /Users/ryanharber/doxocode'
 alias checknuc='ps aux | grep -i sftp | grep -v grep'
 
-alias savebash='source ~/.bash_profile'
-
 alias ls='ls -l -GFh'
 alias lsa='ls -la -GFh'
 alias mountnuc='sshfs nuc:/home/ryanh/code ~/doxocode'
@@ -21,7 +19,6 @@ ql () { qlmanage -p "$*" >& /dev/null; }
 # Git aliases
 alias commits='git log --graph --decorate --oneline'
 
-
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
@@ -34,7 +31,6 @@ mans () {
 }
 
 alias qfind="find . -name "                 # qfind:    Quickly search for file
-
 
 #   spotlight: Search for a file using MacOS Spotlight's metadata
 #   -----------------------------------------------------------
@@ -56,7 +52,6 @@ alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit
 alias herr='tail /var/log/httpd/error_log'              # herr:             Tails HTTP error logs
 alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows apache error logs
 httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grabs headers from web page
-
 
 # Terminal Prompt with Github Branch and Colorization
 
@@ -194,3 +189,6 @@ export PS1;
 }
 
 prompt
+
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -4,7 +4,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 alias mountnuc='sshfs nuc:/home/ryanh/code /Users/ryanharber/doxocode'
 alias checknuc='ps aux | grep -i sftp | grep -v grep'
 
-alias ls='ls -l -GFh'
+alias ls='ls -l --color=auto'
 alias lsa='ls -la -GFh'
 alias mountnuc='sshfs nuc:/home/ryanh/code ~/doxocode'
 alias checknuc='ps aux | grep -i sftp | grep -v grep'

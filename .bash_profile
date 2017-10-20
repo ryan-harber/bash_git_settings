@@ -18,6 +18,8 @@ alias ...='cd ../../'
 alias home='cd ~'
 ql () { qlmanage -p "$*" >& /dev/null; }
 
+alias doxodict='python ~/Programs/Python/doxodict.py'
+
 # Git aliases
 alias commits='git log --graph --decorate --oneline'
 

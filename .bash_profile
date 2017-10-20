@@ -20,6 +20,7 @@ ql () { qlmanage -p "$*" >& /dev/null; }
 
 # Git aliases
 alias commits='git log --graph --decorate --oneline'
+alias pushbranch='git push -u origin'
 
 
 #   lr:  Full Recursive Directory Listing

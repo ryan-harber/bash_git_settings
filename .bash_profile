@@ -6,6 +6,9 @@ alias checknuc='ps aux | grep -i sftp | grep -v grep'
 
 alias savebash='source ~/.bash_profile'
 
+export GREP_COLOR='1;37;41'
+alias grep='grep --color=auto'
+
 alias ls='ls -l -GFh'
 alias lsa='ls -la -GFh'
 alias mountnuc='sshfs nuc:/home/ryanh/code ~/doxocode'

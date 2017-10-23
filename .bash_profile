@@ -9,6 +9,8 @@ alias savebash='source ~/.bash_profile'
 export GREP_COLOR='1;37;41'
 alias grep='grep --color=auto'
 
+alias myip='ipconfig getifaddr en0'
+
 alias ls='ls -l -GFh'
 alias lsa='ls -la -GFh'
 alias mountnuc='sshfs nuc:/home/ryanh/code ~/doxocode'

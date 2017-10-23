@@ -192,3 +192,4 @@ prompt
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+alias refresh='sudo a2ensite aspen && sudo /etc/init.d/apache2 restart'

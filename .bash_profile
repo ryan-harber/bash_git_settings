@@ -1,7 +1,8 @@
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-alias mountnuc='sshfs nuc:/home/ryanh/code /Users/ryanharber/doxocode'
+alias mountnuc='sshfs nuc:/home/ryanh/code /Users/ryan.harber/doxocode'
+alias unmountnuc='diskutil umount force /Users/ryan.harber/doxocode'
 alias checknuc='ps aux | grep -i sftp | grep -v grep'
 
 alias savebash='source ~/.bash_profile'

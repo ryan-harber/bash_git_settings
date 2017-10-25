@@ -30,6 +30,10 @@ alias aspenroutes='python ~/Programs/Python/aspenroutes.py'
 # Git aliases
 alias commits='git log --graph --decorate --oneline'
 alias pushbranch='git push -u origin'
+alias newbranch='git checkout -b'
+alias branches='git branch'
+alias commit='git commit -am'
+alias status='git status'
 
 
 #   lr:  Full Recursive Directory Listing
@@ -54,7 +58,7 @@ spotlight () { mdfind "kMDItemDisplayName == '$@'wc"; }
 #   6. NETWORKING
 #   ---------------------------
 
-alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
+alias myip='ipconfig getifaddr en0'                    # myip:         Public facing IP Address
 
 #   ---------------------------------------
 #   8. WEB DEVELOPMENT

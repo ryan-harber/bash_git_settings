@@ -25,6 +25,7 @@ ql () { qlmanage -p "$*" >& /dev/null; }
 #Python Programs
 alias doxodict='python ~/Programs/Python/doxodict.py'
 alias aspenroutes='python ~/Programs/Python/aspenroutes.py'
+alias doharoutes='python ~/Programs/Python/doharoutes.py'
 
 # Git aliases
 alias commits='git log --graph --decorate --oneline'

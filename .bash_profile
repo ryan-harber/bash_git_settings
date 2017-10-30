@@ -17,7 +17,6 @@ alias lsa='ls -la -GFh'
 alias ..='cd ..'
 alias cl='clear'
 alias edit='sublime'
-cd() { builtin cd "$@"; ls; }
 alias ...='cd ../../'
 alias home='cd ~'
 ql () { qlmanage -p "$*" >& /dev/null; }

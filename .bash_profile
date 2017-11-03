@@ -13,6 +13,7 @@ alias cl='clear'
 alias edit='sublime'
 alias ...='cd ../../'
 alias home='cd ~'
+alias log='tail -f log/development.log'
 ql () { qlmanage -p "$*" >& /dev/null; }
 
 # Git aliases

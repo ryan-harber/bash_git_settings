@@ -4,13 +4,14 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export GREP_COLOR='1;37;41'
 alias grep='grep --color=auto'
 
-alias ls='ls -l -GFh'
+alias ls='ls -l --color=auto'
 alias lsa='ls -la -GFh'
 alias ..='cd ..'
 alias cl='clear'
 alias edit='sublime'
 alias ...='cd ../../'
 alias home='cd ~'
+alias log='tail -f log/development.log'
 ql () { qlmanage -p "$*" >& /dev/null; }
 
 # Git aliases
@@ -161,3 +162,6 @@ export PS1;
 }
 
 prompt
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+alias refresh='sudo a2ensite aspen && sudo /etc/init.d/apache2 restart'

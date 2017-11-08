@@ -1,23 +1,37 @@
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-alias mountnuc='sshfs nuc:/home/ryanh/code /Users/ryanharber/doxocode'
+alias mountnuc='sshfs nuc:/home/ryanh/code /Users/ryan.harber/doxocode'
+alias unmountnuc='diskutil umount force /Users/ryan.harber/doxocode'
 alias checknuc='ps aux | grep -i sftp | grep -v grep'
+alias savebash='source ~/.bash_profile'
 
+export GREP_COLOR='1;37;41'
+alias grep='grep --color=auto'
+
+alias myip='ipconfig getifaddr en0'
 alias ls='ls -l -GFh'
 alias lsa='ls -la -GFh'
-alias mountnuc='sshfs nuc:/home/ryanh/code ~/doxocode'
-alias checknuc='ps aux | grep -i sftp | grep -v grep'
 alias ..='cd ..'
 alias cl='clear'
 alias edit='sublime'
-cd() { builtin cd "$@"; ls; }
 alias ...='cd ../../'
 alias home='cd ~'
 ql () { qlmanage -p "$*" >& /dev/null; }
 
+#Python Programs
+alias doxodict='python ~/Programs/Python/doxodict.py'
+alias aspenroutes='python ~/Programs/Python/aspenroutes.py'
+alias doharoutes='python ~/Programs/Python/doharoutes.py'
+alias bashfind='python ~/Programs/Python/bashfind.py'
+
 # Git aliases
 alias commits='git log --graph --decorate --oneline'
+alias pushbranch='git push -u origin'
+alias newbranch='git checkout -b'
+alias branches='git branch'
+alias commit='git commit -am'
+alias status='git status'
 
 #   lr:  Full Recursive Directory Listing
 #   ------------------------------------------
@@ -40,14 +54,14 @@ spotlight () { mdfind "kMDItemDisplayName == '$@'wc"; }
 #   6. NETWORKING
 #   ---------------------------
 
-alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
+alias myip='ipconfig getifaddr en0'                    # myip:         Public facing IP Address
 
 #   ---------------------------------------
 #   8. WEB DEVELOPMENT
 #   ---------------------------------------
 
 alias apacheEdit='sudo edit /etc/httpd/httpd.conf'      # apacheEdit:       Edit httpd.conf
-alias apacheRestart='sudo apachectl graceful'           # apacheRestart:    Restart Apache
+alias restart='sudo /etc/init.d/apache2 restart'           # apacheRestart:    Restart Apache
 alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit /etc/hosts file
 alias herr='tail /var/log/httpd/error_log'              # herr:             Tails HTTP error logs
 alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows apache error logs
@@ -130,36 +144,6 @@ prompt_git() {
 	fi;
 }
 
-if tput setaf 1 &> /dev/null; then
-	tput sgr0; # reset colors
-	bold=$(tput bold);
-	reset=$(tput sgr0);
-	# Solarized colors, taken from http://git.io/solarized-colors.
-	black=$(tput setaf 0);
-	blue=$(tput setaf 33);
-	cyan=$(tput setaf 37);
-	green=$(tput setaf 64);
-	orange=$(tput setaf 166);
-	purple=$(tput setaf 125);
-	red=$(tput setaf 124);
-	violet=$(tput setaf 61);
-	white=$(tput setaf 15);
-	yellow=$(tput setaf 136);
-else
-	bold='';
-	reset="\e[0m";
-	black="\e[1;30m";
-	blue="\e[1;34m";
-	cyan="\e[1;36m";
-	green="\e[1;32m";
-	orange="\e[1;33m";
-	purple="\e[1;35m";
-	red="\e[1;31m";
-	violet="\e[1;35m";
-	white="\e[1;37m";
-	yellow="\e[1;33m";
-fi;
-
 # Highlight the user name when logged in as root.
 if [[ "${USER}" == "root" ]]; then
 	userStyle="${REDBOLD}";
@@ -178,13 +162,13 @@ fi;
 PS1="\[\033]0;\W\007\]"; # working directory base name
 PS1+="\[${bold}\]\n"; # newline
 PS1+="\[${userStyle}\]\u"; # username
-PS1+="\[${white}\] at ";
+PS1+="\[${WHITE}\] at ";
 PS1+="\[${hostStyle}\]\h"; # host
-PS1+="\[${white}\] in ";
+PS1+="\[${WHITE}\] in ";
 PS1+="\[${GREEN}\]\w"; # working directory full path
-PS1+="\$(prompt_git \"\[${white}\] on \[${PURPLE}\]\" \"\[${BLUE}\]\")"; # Git repository details
-PS1+="\n";
-PS1+="\[${RED}\]→ \[${reset}\]"; # `$` (and reset color)
+PS1+="\$(prompt_git \"\[${WHITE}\] on \[${PURPLE}\]\" \"\[${BLUE}\]\")"; # Git repository details
+PS1+="\[${RESETCOLOR}\]\n"; # newline
+PS1+="\[${RED}\]>> \[${RESETCOLOR}\]"; # `$` (and reset color)
 export PS1;
 }
 

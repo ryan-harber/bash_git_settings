@@ -1,29 +1,28 @@
+# include os-specific bash files if they exist
+if [[ $(uname -s) == Linux ]]; then
+  if [ -f $HOME/.bash_linux ]; then
+      . $HOME/.bash_linux
+  fi;
+fi;
+
+if [[ $(uname -s) == Darwin ]]; then
+  if [ -f $HOME/.bash_mac ]; then
+      . $HOME/.bash_mac
+  fi;
+fi;
+
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-
-alias mountnuc='sshfs nuc:/home/ryanh/code /Users/ryan.harber/doxocode'
-alias unmountnuc='diskutil umount force /Users/ryan.harber/doxocode'
-alias checknuc='ps aux | grep -i sftp | grep -v grep'
-alias savebash='source ~/.bash_profile'
-
 export GREP_COLOR='1;37;41'
 alias grep='grep --color=auto'
-
-alias myip='ipconfig getifaddr en0'
 alias ls='ls -l -GFh'
 alias lsa='ls -la -GFh'
 alias ..='cd ..'
 alias cl='clear'
-alias edit='sublime'
 alias ...='cd ../../'
 alias home='cd ~'
+alias log='tail -f log/development.log'
 ql () { qlmanage -p "$*" >& /dev/null; }
-
-#Python Programs
-alias doxodict='python ~/Programs/Python/doxodict.py'
-alias aspenroutes='python ~/Programs/Python/aspenroutes.py'
-alias doharoutes='python ~/Programs/Python/doharoutes.py'
-alias bashfind='python ~/Programs/Python/bashfind.py'
 
 # Git aliases
 alias commits='git log --graph --decorate --oneline'

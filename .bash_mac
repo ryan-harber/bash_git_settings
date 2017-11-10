@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Nuc Stuff
+alias mountnuc='sshfs nuc:/home/ryanh/code /Users/ryan.harber/doxocode'
+alias unmountnuc='diskutil umount force /Users/ryan.harber/doxocode'
+alias checknuc='ps aux | grep -i sftp | grep -v grep'
+alias savebash='source ~/.bash_profile'
+
+alias edit='atom'
+
+proj () { atom "~/doxocode/${*}"; }
+
+# Python Programs
+alias doxodict='python ~/Programs/Python/doxodict.py'
+alias aspenroutes='python ~/Programs/Python/aspenroutes.py'
+alias doharoutes='python ~/Programs/Python/doharoutes.py'
+alias bashfind='python ~/Programs/Python/bashfind.py'

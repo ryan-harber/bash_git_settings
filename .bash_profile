@@ -26,7 +26,7 @@ ql () { qlmanage -p "$*" >& /dev/null; }
 
 # Git aliases
 alias commits='git log --graph --decorate --oneline'
-alias pushbranch='git push -u origin'
+alias pushbranch='git push -u origin HEAD'
 alias newbranch='git checkout -b'
 alias branches='git branch'
 alias commit='git commit -am'

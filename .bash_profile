@@ -15,8 +15,8 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export GREP_COLOR='1;37;41'
 alias grep='grep --color=auto'
-alias ls='ls -l -GFh'
-alias lsa='ls -la -GFh'
+alias ls='ls -l --color=auto'
+alias lsa='ls -la --color=auto'
 alias ..='cd ..'
 alias cl='clear'
 alias ...='cd ../../'

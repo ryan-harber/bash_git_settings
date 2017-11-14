@@ -15,8 +15,8 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export GREP_COLOR='1;37;41'
 alias grep='grep --color=auto'
-alias ls='ls -l -GFh'
-alias lsa='ls -la -GFh'
+alias ls='ls -l --color=auto'
+alias lsa='ls -la --color=auto'
 alias ..='cd ..'
 alias cl='clear'
 alias ...='cd ../../'
@@ -30,19 +30,8 @@ alias pushbranch='git push -u origin HEAD'
 alias newbranch='git checkout -b'
 alias branches='git branch'
 alias commit='git commit -am'
+function commit() { git commit -am "$@"; }
 alias status='git status'
-
-#   lr:  Full Recursive Directory Listing
-#   ------------------------------------------
-alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
-
-#   mans:   Search manpage given in agument '1' for term given in argument '2' (case insensitive)
-#           displays paginated result with colored search terms and two lines surrounding each hit.            Example: mans mplayer codec
-#   --------------------------------------------------------------------
-mans () {
-        man $1 | grep -iC2 --color=always $2 | less
-}
-
 alias qfind="find . -name "                 # qfind:    Quickly search for file
 
 #   spotlight: Search for a file using MacOS Spotlight's metadata

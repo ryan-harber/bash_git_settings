@@ -29,10 +29,12 @@ alias commits='git log --graph --decorate --oneline'
 alias pushbranch='git push -u origin HEAD'
 alias newbranch='git checkout -b'
 alias branches='git branch'
-alias commit='git commit -am'
 function commit() { git commit -am "$@"; }
+function newcommitmsg() { git commit --amend -m "$@"; }
 alias status='git status'
-alias qfind="find . -name "                 # qfind:    Quickly search for file
+
+# qfind:    Quickly search for file
+alias qfind="find . -name "
 
 #   spotlight: Search for a file using MacOS Spotlight's metadata
 #   -----------------------------------------------------------

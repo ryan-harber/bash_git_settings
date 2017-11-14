@@ -29,21 +29,12 @@ alias commits='git log --graph --decorate --oneline'
 alias pushbranch='git push -u origin HEAD'
 alias newbranch='git checkout -b'
 alias branches='git branch'
-alias commit='git commit -am'
+function commit() { git commit -am "$@"; }
+function newcommitmsg() { git commit --amend -m "$@"; }
 alias status='git status'
 
-#   lr:  Full Recursive Directory Listing
-#   ------------------------------------------
-alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
-
-#   mans:   Search manpage given in agument '1' for term given in argument '2' (case insensitive)
-#           displays paginated result with colored search terms and two lines surrounding each hit.            Example: mans mplayer codec
-#   --------------------------------------------------------------------
-mans () {
-        man $1 | grep -iC2 --color=always $2 | less
-}
-
-alias qfind="find . -name "                 # qfind:    Quickly search for file
+# qfind:    Quickly search for file
+alias qfind="find . -name "
 
 #   spotlight: Search for a file using MacOS Spotlight's metadata
 #   -----------------------------------------------------------

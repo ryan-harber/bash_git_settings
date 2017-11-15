@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Basics
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;35;40'
+alias ls='ls -l -GFh'
+alias lsa='ls -la -GFh'
+
 # Nuc Stuff
 alias mountnuc='sshfs nuc:/home/ryanh/code /Users/ryan.harber/doxocode'
 alias unmountnuc='diskutil umount force /Users/ryan.harber/doxocode'

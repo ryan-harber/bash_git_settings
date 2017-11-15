@@ -4,3 +4,6 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 alias refresh='sudo a2ensite aspen && sudo /etc/init.d/apache2 restart'
+alias grep='grep --color=auto'
+alias ls='ls -l --color=auto'
+alias lsa='ls -la --color=auto'

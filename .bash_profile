@@ -24,6 +24,11 @@ alias home='cd ~'
 alias log='tail -f log/development.log'
 ql () { qlmanage -p "$*" >& /dev/null; }
 
+# RVM
+alias blg='bundle list | grep '
+
+function search(){ find "$1" | xargs grep "$2" -sl; }
+
 # Git aliases
 alias commits='git log --graph --decorate --oneline'
 alias pushbranch='git push -u origin HEAD'

@@ -41,7 +41,7 @@ alias pushbranch='git push -u origin HEAD'
 alias newbranch='git checkout -b'
 alias branches='git branch'
 function commit() { git commit -am "$*"; }
-function newcommitmsg() { git commit --amend -m "$@"; }
+function newcommitmsg() { git commit --amend -m "$*"; }
 alias status='git status'
 
 # qfind:    Quickly search for file

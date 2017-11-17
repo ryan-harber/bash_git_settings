@@ -27,7 +27,7 @@ alias blg='bundle list | grep '
 
 # rspec
 alias alltest='bundle exec rspec spec'
-function models() {bundle exec rspec spec/models/"$1";}
+function models() { bundle exec rspec spec/models/"$1"; }
 alias controllers='bundle exec rspec spec/controllers/'
 alias clients='bundle exec rspec spec/clients/'
 alias views='bundle exec rspec spec/views/'

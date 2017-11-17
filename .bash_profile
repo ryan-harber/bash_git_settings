@@ -40,7 +40,6 @@ alias commits='git log --graph --decorate --oneline'
 alias pushbranch='git push -u origin HEAD'
 alias newbranch='git checkout -b'
 alias branches='git branch'
-function test() { echo $*; }
 function commit() { git commit -am "$*"; }
 function newcommitmsg() { git commit --amend -m "$@"; }
 alias status='git status'

@@ -26,7 +26,12 @@ alias aspenroutes='python ~/Programs/Python/aspenroutes.py'
 alias doharoutes='python ~/Programs/Python/doharoutes.py'
 alias bashfind='python ~/Programs/Python/bashfind.py'
 
-function encode() { echo -n $@ | perl -pe's/([^-_.~A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg'; }
-
 # Chrome Stuff
-function goog() { open "http://www.google.com/search?hl=en#q=$(encode $@)" ;}
+function goog() {
+    search=""
+    echo "Googling: $@"
+    for term in $@; do
+        search="$search%20$term"
+    done
+    open "http://www.google.com/search?q=$search"
+}

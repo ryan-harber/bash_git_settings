@@ -6,3 +6,5 @@
 alias grep='grep --color=auto'
 alias ls='ls -l --color=auto'
 alias lsa='ls -la --color=auto'
+
+alias use2='rvm use ruby-2.0.0-p598@saba'

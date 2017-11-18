@@ -25,3 +25,13 @@ alias doxodict='python ~/Programs/Python/doxodict.py'
 alias aspenroutes='python ~/Programs/Python/aspenroutes.py'
 alias doharoutes='python ~/Programs/Python/doharoutes.py'
 alias bashfind='python ~/Programs/Python/bashfind.py'
+
+# Chrome Stuff
+function goog() {
+    search=""
+    echo "Googling: $@"
+    for term in $@; do
+        search="$search%20$term"
+    done
+    open "http://www.google.com/search?q=$search"
+}

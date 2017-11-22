@@ -3,8 +3,10 @@
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# basic colorization overrides for linux
 alias grep='grep --color=auto'
 alias ls='ls -l --color=auto'
 alias lsa='ls -la --color=auto'
 
-alias use2='rvm use ruby-2.0.0-p598@saba'
+# run a shell command on local mac env
+function mac() { ssh ryan.harber@192.168.13.204 "$*"; }

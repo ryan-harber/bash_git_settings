@@ -13,7 +13,7 @@ fi;
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-export GREP_COLOR='1;37;41'
+export GREP_COLOR='1;37;41'atom
 
 alias ..='cd ..'
 alias cl='clear'
@@ -68,6 +68,85 @@ alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit
 alias herr='tail /var/log/httpd/error_log'              # herr:             Tails HTTP error logs
 alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows apache error logs
 httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grabs headers from web page
+
+# interactive find in files and open prompt
+function findit() {
+  local default_project="$(basename "$(pwd)")";
+  local default_subdir="";
+  local default_regex="";
+  local default_open="";
+  local directory="/home/ryanh/code/";
+  local subdir; local regex; local project; local should_open;
+
+  # # If the directory does not exist than quit
+  # if ssh ryanh@nuc "[ -d /Users/ryan.harber/doxocode/${project}/${subdir} ]"; then
+  #   return;
+  # fi
+
+  while true; do
+      read -e -p "Use $default_project? Or? " project;
+      project=${project:-$default_project};
+      case $project in
+          exit )
+            echo "exiting...";
+            return;;
+          * )
+            if ssh ryanh@nuc "[ -d ${directory}${project//[[:blank:]]/} ]"; then
+              directory="${directory}${project//[[:blank:]]/}/";
+              break;
+            fi;;
+      esac
+  done
+
+  while true; do
+      read -e -p "$directory" subdir;
+      subdir=${subdir:-$default_subdir};
+      case $subdir in
+          exit )
+            echo "exiting..."; return;;
+          "" )
+            break;;
+          * )
+            # If the directory does not exist retry
+            if ssh ryanh@nuc "[ -d ${directory}${subdir//[[:blank:]]/} ]"; then
+              directory="${directory}${subdir//[[:blank:]]/}/";
+            fi
+      esac
+  done
+
+  while true; do
+      read -e -p "Reg/Text => " regex;
+      regex=${regex:-$default_regex};
+      case $regex in
+          "" )
+            ;;
+          * )
+            break;;
+      esac
+  done
+
+  echo -e "\n>> Searching files in [$directory] for '${regex}'...\n";
+
+  while true; do
+      read -e -p "Open Files? (def = no) => " should_open;
+      should_open=${should_open:-$default_open};
+      case $should_open in
+          yes )
+            # If the directory does not exist retry
+            if ssh ryan.harber@192.168.13.204 "[ -d /Users/ryan.harber/doxocode/${directory:17:${#directory}} ]"; then
+              ssh ryan.harber@192.168.13.204 "find /Users/ryan.harber/doxocode/${directory:17:${#directory}} -type f | xargs grep ${regex} -sl | xargs open";
+              return;
+            fi;;
+          exit )
+            echo "exiting..."; return;;
+          ""|no|N|n|NO|No|nO )
+            ssh ryanh@nuc "find ${directory:0:${#directory}-1} -type f | xargs grep ${regex} -sl";
+            return;;
+          * )
+            ;;
+      esac
+  done
+}
 
 # Terminal Prompt with Github Branch and Colorization
 

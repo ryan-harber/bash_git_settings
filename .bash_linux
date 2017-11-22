@@ -3,6 +3,10 @@
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+# basic colorization overrides for linux
 alias grep='grep --color=auto'
 alias ls='ls -l --color=auto'
 alias lsa='ls -la --color=auto'
+
+# run a shell command on local mac env
+function mac() { ssh ryan.harber@192.168.13.204 "$*"; }

@@ -34,6 +34,7 @@ alias views='bundle exec rspec spec/views/'
 
 # Other
 function search(){ find "$1" | xargs grep "$2" -sl; }
+alias copypubkey='cat ~/.ssh/id_rsa.pub | pbcopy'
 
 # Git aliases
 alias commits='git log --graph --decorate --oneline'

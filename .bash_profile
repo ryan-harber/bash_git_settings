@@ -11,9 +11,6 @@ if [[ $(uname -s) == Darwin ]]; then
   fi;
 fi;
 
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-
 alias ..='cd ..'
 alias cl='clear'
 alias ...='cd ../../'

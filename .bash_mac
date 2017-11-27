@@ -17,6 +17,7 @@ alias unmountallnuc='diskutil umount force /Users/ryan.harber/everything'
 alias savebash='source ~/.bash_profile'
 alias bashmac='atom ~/.bash_mac'
 alias profile='atom ~/.bash_profile'
+alias commands='atom ~/Programs/Bash/commands'
 
 alias edit='atom'
 

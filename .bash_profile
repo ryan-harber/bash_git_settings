@@ -13,7 +13,6 @@ fi;
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-export GREP_COLOR='1;37;41'atom
 
 alias ..='cd ..'
 alias cl='clear'
